@@ -1,7 +1,14 @@
-<h1>Administradores</h1>
+<h1>Administradores </h1>
+
 <div class="card shadow mb-4">
+    
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Lista de Administradores</h6>
+        <h6 class="m-0 font-weight-bold text-primary">Lista de Administradores 
+            <%= link_to new_admins_backoffice_admin_path, class:'btn btn-outline-success' do %>
+                <i>Adicionar novo</i>
+            <% end %> 
+        </h6>
+        
     </div>
     <div class="card-body">
         <div class="table-responsive" >
@@ -42,7 +49,12 @@
                             </td>
                         
                         <td style="width: 100px;"><button class="btn btn-info btn-circle btn-sm"  ><i class="fas fa-info-circle"></i></button></td>
-                        <td style="width: 100px;"><button class="btn btn-danger btn-circle btn-sm" ><i class="fas fa-trash"></i></button></td>
+                        <td style="width: 100px;">
+                        <%= link_to admins_backoffice_admin_path(admin), method: :delete, class:'btn btn-danger btn-circle btn-sm', data: { confirm: 'Deseja excluir o registro?' } do %>
+                            
+                              <i class="fas fa-trash"></i>
+                            <% end %>
+                        </td>
                     </tr>    
                     <% end %>
                     
