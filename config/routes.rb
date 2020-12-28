@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   
   namespace :admins_backoffice do
     get 'welcome/index' # rota para index do site
-    resources :admins # rota para administradores
+    resources :admins   # rota para administradores
+    resources :subjects # rota para os assuntos/áreas
   end
   namespace :site do
     get 'welcome/index'
