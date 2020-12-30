@@ -12,6 +12,8 @@ namespace :dev do
       show_spinner("Criando o Administradores Extras...") { %x(rails dev:add_default_admin_extra) }
       show_spinner("Criando o Usuário padrão...") { %x(rails dev:add_default_user) }
       show_spinner("Cadastrando assuntos padrões...") { %x(rails dev:add_subjects) }
+      show_spinner("Cadastrando questões e respostas...") { %x(rails dev:add_answers_and_questions) }
+
       #%x(rails dev:add_mining_types)
      
     else
@@ -47,6 +49,18 @@ namespace :dev do
     end
   end
 
+  desc "Adiciona questões e respostas"
+  task add_answers_and_questions: :environment do
+    Subject.all.each do |subject|
+        rand(5..10).times do |i|
+          Question.create!(
+            description: "#{Faker::Lorem.paragraph} #{Faker::Lorem.question}",
+            subject: subject
+          )
+        end
+    end
+
+  end
   
 
   private
