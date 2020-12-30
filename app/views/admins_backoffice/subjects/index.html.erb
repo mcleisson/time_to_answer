@@ -1,9 +1,9 @@
-<h1>Assuntos/Áreas </h1>
+<h1><%= translate_model_name(@subjects, count: 2) %> </h1>
 
 <div class="card shadow mb-4">
     
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">Lista de Assuntos/Área 
+        <h6 class="m-0 font-weight-bold text-primary"><%= t('message.listing', model: translate_model_name(@subjects, count: 2)) %>
             <%= link_to new_admins_backoffice_subject_path, class:'btn btn-outline-success' do %>
                 <i>Adicionar novo</i>
             <% end %> 
@@ -20,8 +20,12 @@
                             <table class="table table-bordered dataTable" id="dataTable" width="100%" cellspacing="0" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                 <thead>
                     <tr role="row">
-                        <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 268px;">#ID</th>
-                        <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 401px;">description</th>
+                        <th rowspan="1" colspan="1">
+                            <%= translate_attributes(@subjects, :id) %>
+                        </th>
+                        <th rowspan="1" colspan="1">
+                            <%= translate_attributes(@subjects, :description) %>
+                        </th>
                         <th rowspan="1" colspan="1">Editar</th>
                         <th rowspan="1" colspan="1">Visualizar</th>
                         <th rowspan="1" colspan="1">Apagar</th>
@@ -30,8 +34,12 @@
                 </thead>
                 <tfoot>
                     <tr>
-                        <th rowspan="1" colspan="1">#ID</th>
-                        <th rowspan="1" colspan="1">description</th>
+                        <th rowspan="1" colspan="1">
+                            <%= translate_attributes(@subjects, :id) %>
+                        </th>
+                        <th rowspan="1" colspan="1">
+                            <%= translate_attributes(@subjects, :description) %>
+                        </th>
                         <th rowspan="1" colspan="1">Editar</th>
                         <th rowspan="1" colspan="1">Visualizar</th>
                         <th rowspan="1" colspan="1">Apagar</th>
