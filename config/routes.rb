@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     get 'welcome/index' # rota para index do site
     resources :admins   # rota para administradores
     resources :subjects # rota para os assuntos/áreas
+    resources :questions # rota para as perguntas
   end
   namespace :site do
     get 'welcome/index'
