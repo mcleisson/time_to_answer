@@ -2,3 +2,4 @@ log/development.log
 tmp/cache/*
 tmp/pids/server.pid
 tmp/cache/assets/sprockets/v3.0/_o/_onMmoXQhQMP4epbd63-ar12IbwkM1TQ0680NHg1LIU.cache
+log/*
